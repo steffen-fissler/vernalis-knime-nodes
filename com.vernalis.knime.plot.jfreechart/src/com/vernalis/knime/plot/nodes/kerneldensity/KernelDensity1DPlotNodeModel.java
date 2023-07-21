@@ -37,7 +37,7 @@ import org.knime.core.data.DoubleValue;
 import org.knime.core.data.StringValue;
 import org.knime.core.data.def.StringCell;
 import org.knime.core.data.property.ColorAttr;
-import org.knime.core.data.property.ColorHandler.ColorModel;
+import org.knime.core.data.property.ColorModel;
 import org.knime.core.data.property.ColorModelNominal;
 import org.knime.core.data.property.ShapeFactory;
 import org.knime.core.node.BufferedDataTable;
@@ -352,7 +352,7 @@ public class KernelDensity1DPlotNodeModel extends
 	final ColorModelNominal createColorMapping(
 			final Set<? extends DataCell> set, boolean useGreyScale) {
 		if (set == null || set.isEmpty()) {
-			return new ColorModelNominal(Collections.emptyMap());
+			return new ColorModelNominal(Collections.emptyMap(), null);
 		}
 
 		Map<DataCell, ColorAttr> map = new LinkedHashMap<>();
@@ -373,7 +373,7 @@ public class KernelDensity1DPlotNodeModel extends
 			}
 		}
 
-		return new ColorModelNominal(map);
+		return new ColorModelNominal(map, null);
 	}
 
 }
