@@ -352,7 +352,7 @@ public class KernelDensity1DPlotNodeModel extends
 	final ColorModelNominal createColorMapping(
 			final Set<? extends DataCell> set, boolean useGreyScale) {
 		if (set == null || set.isEmpty()) {
-			return new ColorModelNominal(Collections.emptyMap());
+			return new ColorModelNominal(Collections.emptyMap(), null);
 		}
 
 		Map<DataCell, ColorAttr> map = new LinkedHashMap<>();
@@ -373,7 +373,7 @@ public class KernelDensity1DPlotNodeModel extends
 			}
 		}
 
-		return new ColorModelNominal(map);
+		return new ColorModelNominal(map, null);
 	}
 
 }
